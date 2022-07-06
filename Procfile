@@ -1,1 +1,1 @@
-web: gunicorn digimap12:app --log-file -
+web: gunicorn digimap-12:app --log-file -
