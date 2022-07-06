@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{
+            url_for('static', filename='css/home.css')}}">
+        <title> Deblurred | Dynamic Scene Deblurring </title>
+    </head>
+
+    <body>
+        <h1 class="txtH1"> Dynamic Scene Deblurring </h1>
+        <h4 class="txtH4"> Converting dynamic scene blurred images to sharp images </h4>
+
+    <div class="divSamples">
+        {% if input_image %}
+            <div id="divSampleInput">
+                <h5 class="txtH5"> Input </h5>
+                <img class="imgSample" src="{{input_image}}" alt="input_image">
+            </div>
+        {% endif %}
+
+        {% if output_image %}
+            <div id="divSampleOutput">
+                <h5 class="txtH5"> Output </h5>
+                <img class="imgSample" src="{{output_image}}" alt="output_image">
+            </div>
+        {% endif %}
+    </div>
+
+        <br>
+        <br>
+        <button class="btnUpload"> Save Output </button>
+        <br>
+        <a href="/"> <button class="btnDeblur"> Deblur Again </button> </a>
+    </body>
+
+</html>

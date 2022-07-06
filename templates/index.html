@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{
+            url_for('static', filename='css/home.css')}}">
+        <title> Home | Dynamic Scene Deblurring </title>
+    </head>
+
+<body>
+    <h1 class="txtH1"> Dynamic Scene Deblurring </h1>
+    <h4 class="txtH4"> Converting dynamic scene blurred images to sharp images </h4>
+
+    <p>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul>
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+    </p>
+
+    <form class="p-3 text-center" id="form_id" action='/' , method="post" enctype="multipart/form-data">
+        <input class="form-control" type="file" name="file">
+        <br>
+        <input class="btnDeblur" type="submit" value="Deblur Image">
+    </form>
+    <hr>
+    <h4 class="txtH4" id="txtExample"> Example </h4>
+    <div class="divSamples">
+    <br>
+    <div class="divSamples">
+        <div id="divSampleInput">
+            <h5 class="txtH5"> Sample Input </h5>
+            <img src={{sample_input}} alt="sample_input">
+        </div>
+        <div id="divSampleOutput">
+            <h5 class="txtH5"> Sample Output </h5>
+            <img src="{{sample_output}}" alt="sample_output">
+        </div>
+    </div>
+</body>
+
+</html>
